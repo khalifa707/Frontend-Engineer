@@ -1,0 +1,40 @@
+:root {
+    /* Space */
+    --step--5: clamp(0.3686rem, 0.6197rem + -0.324vi, 0.5549rem);
+    --step--4: clamp(0.4608rem, 0.6812rem + -0.2843vi, 0.6243rem);
+    --step--3: clamp(0.576rem, 0.7463rem + -0.2197vi, 0.7023rem);
+    --step--2: clamp(0.72rem, 0.8145rem + -0.122vi, 0.7901rem);
+    --step--1: clamp(0.8889rem, 0.885rem + 0.0193vi, 0.9rem);
+    --step-0: clamp(1rem, 0.9565rem + 0.2174vi, 1.125rem);
+    --step-1: clamp(1.125rem, 1.0272rem + 0.4891vi, 1.4063rem);
+    --step-2: clamp(1.2656rem, 1.0944rem + 0.856vi, 1.7578rem);
+    --step-3: clamp(1.4238rem, 1.1548rem + 1.3451vi, 2.1973rem);
+    --step-4: clamp(1.6018rem, 1.2036rem + 1.9909vi, 2.7466rem);
+    --step-5: clamp(1.802rem, 1.2347rem + 2.8369vi, 3.4332rem);
+    --step-6: clamp(2.0273rem, 1.2397rem + 3.9378vi, 4.2915rem);
+    --step-7: clamp(2.2807rem, 1.2081rem + 5.363vi, 5.3644rem);
+    --step-8: clamp(2.5658rem, 1.1259rem + 7.1995vi, 6.7055rem);
+
+    /* Colors */
+    --color--fresh-snow: #ffffff; /* Pure white for contrast and readability */
+    --color--morning-mist: #e3e5e1; /* Soft gray for backgrounds, mimicking early morning mist */
+    --color--forest-green: #3a5a40; /* Deep green, representing dense forest foliage */
+    --color--lake-blue: #7ba3a8; /* Calm blue, reminiscent of clear lake waters */
+    --color--sunset-orange: #f2a65a; /* Warm orange, capturing the beauty of sunsets over the parks */
+    --color--rocky-trail: #787876; /* Muted gray, inspired by rocky trails and paths */
+    --color--midnight-sky: #2e3d49; /* Dark blue-gray, for text, evoking the night sky */
+    --color--deep-earth: #000000; /* Black, grounding the scheme with depth and contrast */
+
+    /* Shadows */
+    --shadow-color: 0deg 0% 72%;
+    --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.17),
+    0.9px 1.7px 2.2px -0.3px hsl(var(--shadow-color) / 0.17),
+    1.5px 2.9px 3.7px -0.6px hsl(var(--shadow-color) / 0.17),
+    2.2px 4.4px 5.5px -0.8px hsl(var(--shadow-color) / 0.17),
+    3.1px 6.3px 7.9px -1.1px hsl(var(--shadow-color) / 0.17),
+    4.5px 8.9px 11.2px -1.4px hsl(var(--shadow-color) / 0.17),
+    6.3px 12.6px 15.8px -1.7px hsl(var(--shadow-color) / 0.17),
+    8.8px 17.6px 22.1px -1.9px hsl(var(--shadow-color) / 0.17),
+    12.1px 24.2px 30.4px -2.2px hsl(var(--shadow-color) / 0.17),
+    16.3px 32.5px 40.9px -2.5px hsl(var(--shadow-color) / 0.17);
+}
