@@ -215,6 +215,18 @@ select {
             --wrapper-max-width: 1330px;
         }
     }
+    .equal-columns {
+        display: grid;
+        gap: var(--equal-columns-gap, 1rem);
+
+        @media (width > 760px) {
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+        }
+        &[data-gap="large"] {
+            --equal-columns-gap: 2rem;
+        }
+    }
 }
 
 @layer components{
