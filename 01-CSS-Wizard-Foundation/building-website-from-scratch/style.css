@@ -231,6 +231,13 @@ select {
             --equal-columns-vertical-aligment: center;
         }
     }
+
+    .flow > * + * {
+        margin-block-start: var(--flow-space, 1em);
+    }
+    .grid-flow {
+        display: grid;
+        gap: var(--grid-flow-space, 1rem);
 }
 
 @layer components{
