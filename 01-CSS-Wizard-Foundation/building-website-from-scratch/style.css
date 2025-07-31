@@ -178,6 +178,10 @@ select {
     a:focus-visible {
         color: var(--text-brand-light);
     }
+
+    img {
+        border-radius: var(--border-radius-3);
+    }
 }
 
 @layer layout {
