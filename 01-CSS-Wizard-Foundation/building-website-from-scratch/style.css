@@ -217,6 +217,35 @@ select {
     }
 }
 
+@layer components{
+
+    .site-header {
+        padding-block: 1rem;
+    }
+
+    .site-header__inner{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 2rem;
+        justify-content: space-between;
+    }
+
+    .primary-navigation {
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
 @layer utilities {
 
     .visually-hidden {
@@ -232,9 +261,11 @@ select {
     .text-center {
         text-align: center;
     }
+
     .text-brand {
         color: var(--text-brand);
     }
+
     .text-high-contrast {
         color: var(--text-high-contrast);
     }
