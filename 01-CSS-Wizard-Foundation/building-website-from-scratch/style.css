@@ -218,6 +218,7 @@ select {
     .equal-columns {
         display: grid;
         gap: var(--equal-columns-gap, 1rem);
+        align-items: var(--equal-columns-vertical-aligment, stretch);
 
         @media (width > 760px) {
             grid-auto-flow: column;
@@ -225,6 +226,9 @@ select {
         }
         &[data-gap="large"] {
             --equal-columns-gap: 2rem;
+        }
+        &[data-align="center"] {
+            --equal-columns-vertical-aligment: center;
         }
     }
 }
