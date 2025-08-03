@@ -197,6 +197,7 @@ select {
             }
         }
     }
+
     .wrapper {
         --wrapper-max-width: 1130px;
         --wrapper-padding: 1rem;
@@ -215,6 +216,7 @@ select {
             --wrapper-max-width: 1330px;
         }
     }
+
     .equal-columns {
         display: grid;
         gap: var(--equal-columns-gap, 1rem);
@@ -224,9 +226,11 @@ select {
             grid-auto-flow: column;
             grid-auto-columns: 1fr;
         }
+
         &[data-gap="large"] {
             --equal-columns-gap: 2rem;
         }
+
         &[data-align="center"] {
             --equal-columns-vertical-aligment: center;
         }
@@ -235,9 +239,11 @@ select {
     .flow > * + * {
         margin-block-start: var(--flow-space, 1em);
     }
+
     .grid-flow {
         display: grid;
         gap: var(--grid-flow-space, 1rem);
+    }
 }
 
 @layer components{
