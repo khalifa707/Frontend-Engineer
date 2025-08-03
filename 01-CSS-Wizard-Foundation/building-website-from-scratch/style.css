@@ -305,6 +305,24 @@ select {
         color: var(--card-title-color, var(--text-brand));
         font-size: var(--card-title-font-size, var(--font-size-heading-sm));
     }
+
+    .button {
+        display: inline flex;
+        cursor: pointer;
+        font-family: var(--ff-heading), sans-serif;
+        font-weight: 700;
+        font-size: var(--font-size-md);
+        text-decoration: none;
+        background-color: var(--background-accent-main);
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius-1);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+        background: var(--background-accent-light);
+        color: var(--text-high-contrast);
+    }
 }
 
 @layer utilities {
