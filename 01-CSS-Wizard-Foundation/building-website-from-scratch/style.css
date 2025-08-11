@@ -252,11 +252,22 @@ select {
         padding-block: 1rem;
     }
 
-    .site-header__inner{
+    .site-header__inner {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem 2rem;
         justify-content: space-between;
+    }
+
+    [aria-controls="primary-nav"] {
+        z-index: 200;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+
+        img {
+            border-radius: 0;
+        }
     }
 
     .primary-navigation {
@@ -271,6 +282,31 @@ select {
 
         a {
             text-decoration: none;
+        }
+
+        @media(width < 760px) {
+
+            position: absolute;
+            z-index: 10;
+            top: 0;
+            right: 0;
+            font-weight: 700;
+            font-size: var(--font-size-lg);
+            font-family: var(--ff-heading), sans-serif;
+            background-color: var(--background-accent-main);
+            padding: 2rem;
+            border-radius: 0 0 0 var(--border-radius-3);
+
+            ul {
+                gap: 0;
+                flex-direction: column;
+            }
+
+            li + li {
+                margin-block-start: 1.5rem;
+                padding-block-start: 1.5rem;
+                border-top: 2px solid var(--background-accent-light);
+            }
         }
     }
     .hero {
