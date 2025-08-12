@@ -244,6 +244,13 @@ select {
         display: grid;
         gap: var(--grid-flow-space, 1rem);
     }
+
+    .grid-auto-fit {
+        --grid-auto-fit-min-column-size: 250px;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-auto-fit-min-column-size, 450px), 100%), 1fr));
+    }
 }
 
 @layer components{
