@@ -237,10 +237,12 @@ select {
     }
 
     .flow > * + * {
+        --flow-space: 1 em;
         margin-block-start: var(--flow-space, 1em);
     }
 
     .grid-flow {
+        --grid-flow-space: 1rem;
         display: grid;
         gap: var(--grid-flow-space, 1rem);
     }
@@ -366,6 +368,14 @@ select {
             color: var(--text-brand);
         }
     }
+
+    .mushroom-guide {
+        --card-title-color: var(--text-high-contrast);
+        --card-title-font-size: var(--font-size-lg);
+        --card-gap: 0.75rem;
+    }
+
+
     .card {
         display: grid;
         gap: 1rem;
@@ -378,8 +388,51 @@ select {
         }
     }
     .card__title {
+        --card-title-color: var(--text-brand);
+        --card-title-font-size: var(--font-size-heading-sm);
         color: var(--card-title-color, var(--text-brand));
         font-size: var(--card-title-font-size, var(--font-size-heading-sm));
+    }
+
+    .card__note {
+        font-size: var(--font-size-sm);
+        background-color: var(--background-extra-light);
+        padding: 0.75rem;
+        border-radius: var(--border-radius-1);
+    }
+
+    .tag-list{
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+
+        li{
+            font-family: var(--ff-heading), sans-serif;
+            font-size: var(--font-size-sm);
+            color: var(--text-high-contrast);
+            --tag-bg: red;
+            background-color: var(--tag-bg, red);
+            padding: 0 0.25rem;
+            border-radius: var(--border-radius-1);
+        }
+        [data-edible="edible"] {
+            --tag-bg: var(--background-accent-main);
+        }
+
+        [data-edible="toxic"] {
+            --tag-bg: var(--clr-red-500);
+        }
+
+        [data-season="spring"] {
+            --tag-bg: var(--clr-teal-500);
+        }
+
+        [data-season="summer"] {
+            --tag-bg: var(--background-accent-main);
+        }
+        [data-season="fall"] {
+            --tag-bg: var(--clr-orange-500);
+        }
     }
 
     .button {
