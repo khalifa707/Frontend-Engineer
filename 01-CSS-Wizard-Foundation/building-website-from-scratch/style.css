@@ -377,7 +377,8 @@ select {
 
 
     .card {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 1rem;
         padding: 1rem;
         background-color: var(--background-light);
@@ -395,6 +396,7 @@ select {
     }
 
     .card__note {
+        margin-block-start: auto;
         font-size: var(--font-size-sm);
         background-color: var(--background-extra-light);
         padding: 0.75rem;
