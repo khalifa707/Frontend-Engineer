@@ -186,6 +186,12 @@ select {
 
 @layer layout {
 
+    .flex-group{
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+    }
+
     .section {
         padding-block: 3.75rem;
 
@@ -237,7 +243,7 @@ select {
     }
 
     .flow > * + * {
-        --flow-space: 1 em;
+        --flow-space: 1em;
         margin-block-start: var(--flow-space, 1em);
     }
 
@@ -479,6 +485,14 @@ select {
         font-size: var(--font-size-md);
         font-family: var(--ff-heading), sans-serif;
         font-weight: 700;
+    }
+
+    select{
+        padding: .5rem 1rem;
+        background-color: var(--background-accent-main);
+        border-radius: var(--border-radius-2);
+        border: 0;
+        color: var(--text-high-contrast);
     }
 }
 
