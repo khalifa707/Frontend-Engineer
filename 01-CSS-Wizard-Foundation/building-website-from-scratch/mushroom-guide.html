@@ -65,14 +65,13 @@
             <div class="flow">
                 <h2 class="section-title">Get to know your mushrooms</h2>
                 <div class="flex-group">
-                    <select name="" id="">
+                    <select name="season" id="season">
                         <option value="all">Season: All</option>
                         <option value="spring">Spring</option>
                         <option value="summer">Summer</option>
-                        <option value="winter">Winter</option>
                         <option value="fall">Fall</option>
                     </select>
-                    <select name="" id="">
+                    <select name="edible" id="">
                         <option value="all">Type: All</option>
                         <option value="edible">Edible</option>
                         <option value="toxic">Toxic</option>
@@ -80,7 +79,7 @@
                 </div>
                 <!--grid of Mushrooms-->
                 <div class="grid-auto-fit">
-                    <div class="card">
+                    <div class="card" hidden>
                         <h3 class="card__title">Chanterelle</h3>
                         <ul class="tag-list" role="list" aria-label="Mushroom Characteristics">
                             <li data-edible="edible">
