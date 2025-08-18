@@ -155,6 +155,13 @@ select {
         line-height: 1.6;
     }
 
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            scroll-behavior: smooth;
+            scroll-padding: 3rem;
+        }
+    }
+
     body {
         font-family: var(--ff-body), sans-serif;
         font-size: var(--font-size-regular);
