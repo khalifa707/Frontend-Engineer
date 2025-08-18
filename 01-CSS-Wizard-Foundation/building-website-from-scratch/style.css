@@ -381,6 +381,43 @@ select {
         --card-gap: 0.75rem;
     }
 
+    .faq-bento {
+        color: var(--text-high-contrast);
+        display: grid;
+        gap: 1rem;
+
+        grid-template-areas:
+        "card-one"
+        "card-two"
+        "card-three"
+        "card-four";
+
+        @media (width > 600px) {
+        grid-template-areas:
+            "card-one card-two"
+            "card-three card-four"
+    }
+
+        @media (width > 900px) {
+            grid-template-areas:
+                "card-one card-two card-three"
+                "card-four card-four card-three";
+        }
+
+        :nth-child(1){
+            grid-area: card-one;
+        }
+        :nth-child(2){
+            grid-area: card-two;
+        }
+        :nth-child(3){
+            grid-area: card-three;
+        }
+        :nth-child(4){
+            grid-area: card-four;
+        }
+    }
+
 
     .card {
         display: flex;
