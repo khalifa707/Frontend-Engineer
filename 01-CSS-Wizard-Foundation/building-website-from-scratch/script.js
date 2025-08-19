@@ -60,10 +60,6 @@ function filterCards() {
             card.hidden = true;
         }
 
-        if (hasVisibleCards) {
-            noResultsMessage.hidden = true;
-        } else {
-            noResultsMessage.hidden = false;
-        }
+        noResultsMessage.hidden = hasVisibleCards;
     });
 }
