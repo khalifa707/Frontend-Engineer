@@ -16,9 +16,9 @@ hamburgerButton.addEventListener("click", () => {
 
 
 const cards = document.querySelectorAll(".mushroom-guide .card");
-
 const seasonFilter = document.querySelector("#season");
 const edibleFilter = document.querySelector('select[name="edible"]');
+const noResultsMessage = document.querySelector(".no-matches");
 
 const currentFilters = {
     season: "all",
@@ -41,6 +41,7 @@ function updateFilters(e) {
 }
 
 function filterCards() {
+    let hasVisibleCards = false;
     cards.forEach((card) => {
         const seasonElement = card.querySelector("[data-season]");
         const edibleElement = card.querySelector("[data-edible]");
@@ -54,8 +55,15 @@ function filterCards() {
             (currentFilters.edible === "all" || currentFilters.edible === edible)
         ) {
             card.hidden = false;
+            hasVisibleCards = true;
         } else {
             card.hidden = true;
+        }
+
+        if (hasVisibleCards) {
+            noResultsMessage.hidden = true;
+        } else {
+            noResultsMessage.hidden = false;
         }
     });
 }
