@@ -18,30 +18,36 @@ hamburgerButton.addEventListener("click", () => {
 const cards = document.querySelectorAll(".mushroom-guide .card");
 
 const seasonFilter = document.querySelector("#season");
-const edibleFilter = document.querySelector("#edible");
+const edibleFilter = document.querySelector('select[name="edible"]');
 
 const currentFilters = {
     season: "all",
     edible: "all",
 };
 
-seasonFilter.addEventListener("change", updateFilters);
-edibleFilter.addEventListener("change", updateFilters);
+// Add event listeners only if elements exist
+if (seasonFilter) {
+    seasonFilter.addEventListener("change", updateFilters);
+}
+if (edibleFilter) {
+    edibleFilter.addEventListener("change", updateFilters);
+}
 
 function updateFilters(e) {
-    const filterType = e.target.id;
+    const filterType = e.target.name || e.target.id;
     currentFilters[filterType] = e.target.value;
 
     filterCards();
 }
 
-function filterCards(){
+function filterCards() {
     cards.forEach((card) => {
-        const season = card.querySelector("[data-season]").dataset.season;
-        const edible = card.querySelector("[data-edible]").dataset.edible;
+        const seasonElement = card.querySelector("[data-season]");
+        const edibleElement = card.querySelector("[data-edible]");
 
-        const matchesSeason = currentFilters.season === season;
-        const matchesEdible = currentFilters.edible === edible;
+        // Check if elements exist before accessing dataset
+        const season = seasonElement ? seasonElement.dataset.season : null;
+        const edible = edibleElement ? edibleElement.dataset.edible : null;
 
         if (
             (currentFilters.season === "all" || currentFilters.season === season) &&
@@ -51,6 +57,5 @@ function filterCards(){
         } else {
             card.hidden = true;
         }
-
-    })
+    });
 }
