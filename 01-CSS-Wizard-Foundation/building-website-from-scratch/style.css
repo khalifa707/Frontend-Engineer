@@ -418,6 +418,10 @@
         background-size: cover;
         font-size: var(--font-size-md);
         color: var(--text-high-contrast);
+
+/*        animation: fade-out forwards;
+        animation-timeline: view();
+        animation-range-start: exit;*/
     }
 
     .hero__title {
@@ -622,6 +626,24 @@
     }
 }
 
+@layer animations {
+    @supports (animation-timeline: view()) {
+        .hero {
+            animation: fade-out linear;
+            animation-timeline: view();
+            animation-range: exit 0% exit 100%;
+        }
+    }
+
+    /* Fallback for browsers that don't support view() */
+    @supports not (animation-timeline: view()) {
+        .hero {
+            /* Add any fallback animation or leave empty */
+            opacity: 1;
+        }
+    }
+}
+
 @layer utilities {
 
     [hidden] {
@@ -699,4 +721,13 @@
         animation: none !important;
     }
 
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
