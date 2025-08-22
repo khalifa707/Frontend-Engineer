@@ -15,6 +15,17 @@ hamburgerButton.addEventListener("click", () => {
 });
 
 
+const resizeObserver = new ResizeObserver(() => {
+    document.body.classList.add("resizing");
+
+    requestAnimationFrame(() => {
+        document.body.classList.remove("resizing");
+    });
+});
+resizeObserver.observe(document.body);
+
+
+
 const cards = document.querySelectorAll(".mushroom-guide .card");
 const seasonFilter = document.querySelector("#season");
 const edibleFilter = document.querySelector('select[name="edible"]');

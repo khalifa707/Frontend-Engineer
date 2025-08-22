@@ -384,6 +384,8 @@
             }
         }
     }
+
+
     @media (width < 760px) {
         [aria-expanded="true"] ~ .primary-navigation {
             display: block;
@@ -690,6 +692,11 @@
 
     .font-size-lg {
         font-size: var(--font-size-lg);
+    }
+
+    .resizing * {
+        transition: none !important;
+        animation: none !important;
     }
 
 }
