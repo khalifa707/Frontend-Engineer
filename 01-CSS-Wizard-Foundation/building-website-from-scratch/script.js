@@ -20,6 +20,15 @@ const seasonFilter = document.querySelector("#season");
 const edibleFilter = document.querySelector('select[name="edible"]');
 const noResultsMessage = document.querySelector(".no-matches");
 
+
+cards.forEach((card, index) => {
+    // You can use a data attribute if cards have unique IDs
+    const mushroomId = `mushroom-${index + 1}`;
+    card.style.viewTransitionName = `mushroom-card-${mushroomId}`;
+});
+
+
+
 const currentFilters = {
     season: "all",
     edible: "all",
@@ -37,7 +46,13 @@ function updateFilters(e) {
     const filterType = e.target.name || e.target.id;
     currentFilters[filterType] = e.target.value;
 
-    filterCards();
+
+    if (!document.startViewTransition()) {
+        filterCards();
+        return;
+    }
+
+    document.startViewTransition(() => filterCards());
 }
 
 function filterCards() {

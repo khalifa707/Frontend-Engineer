@@ -4,77 +4,77 @@
 
 @layer reset {
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
 
-/* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
-html {
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-}
+    /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+    html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
 
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-    margin: 0;
-}
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    figure,
+    blockquote,
+    dl,
+    dd {
+        margin: 0;
+    }
 
-/* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
-[role="list"] {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+    /* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
+    [role="list"] {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-body {
-    min-block-size: 100vh;
-    line-height: 1.6;
-}
+    body {
+        min-block-size: 100vh;
+        line-height: 1.6;
+    }
 
-h1,
-h2,
-h3,
-button,
-input,
-label {
-    line-height: 1.1;
-}
+    h1,
+    h2,
+    h3,
+    button,
+    input,
+    label {
+        line-height: 1.1;
+    }
 
-h1,
-h2,
-h3,
-h4 {
-    text-wrap: balance;
-}
+    h1,
+    h2,
+    h3,
+    h4 {
+        text-wrap: balance;
+    }
 
-p,
-li {
-    text-wrap: pretty;
-}
+    p,
+    li {
+        text-wrap: pretty;
+    }
 
-img,
-picture {
-    max-inline-size: 100%;
-    display: block;
-}
+    img,
+    picture {
+        max-inline-size: 100%;
+        display: block;
+    }
 
-input,
-button,
-textarea,
-select {
-    font: inherit;
-}
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
 
 }
 
@@ -337,6 +337,7 @@ select {
         @media(width < 760px) {
 
             display: none;
+            opacity: 0;
             position: absolute;
             z-index: 10;
             top: 0;
@@ -363,6 +364,7 @@ select {
     @media (width < 760px) {
         [aria-expanded="true"] + .primary-navigation {
             display: block;
+            opacity: 1;
         }
         [aria-controls="primary-nav"]{
             display: block;
@@ -404,10 +406,10 @@ select {
         "card-four";
 
         @media (width > 600px) {
-        grid-template-areas:
+            grid-template-areas:
             "card-one card-two"
             "card-three card-four"
-    }
+        }
 
         @media (width > 900px) {
             grid-template-areas:
