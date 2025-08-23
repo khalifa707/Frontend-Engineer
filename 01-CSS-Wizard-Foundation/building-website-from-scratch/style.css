@@ -1,22 +1,64 @@
+/**
+ * FUNGI FINDERS - COMPREHENSIVE STYLESHEET
+ *
+ * This stylesheet is organized using CSS Cascade Layers for better maintainability:
+ * 1. @layer reset - CSS reset and normalization
+ * 2. @layer base - Design tokens, typography, and base styles
+ * 3. @layer layout - Layout utilities and grid systems
+ * 4. @layer components - Reusable UI components
+ * 5. @layer animations - Animation definitions and classes
+ * 6. @layer utilities - Single-purpose utility classes
+ *
+ * Design System Features:
+ * - Responsive design with mobile-first approach
+ * - CSS custom properties for consistent theming
+ * - Accessible color contrast ratios
+ * - Smooth animations with reduced motion support
+ * - Modern CSS features (container queries, view transitions, etc.)
+ */
+
+/* ============================================================================
+   VIEW TRANSITIONS CONFIGURATION
+   ============================================================================ */
+
+/**
+ * Enable automatic view transitions for navigation
+ * Provides smooth page transitions when supported by the browser
+ */
 @view-transition {
     navigation: auto;
 }
 
-@layer reset {
+/* ============================================================================
+   CSS RESET LAYER
+   ============================================================================ */
 
+@layer reset {
+    /**
+     * Universal box-sizing reset
+     * Ensures all elements use border-box sizing for predictable layouts
+     */
     *,
     *::before,
     *::after {
         box-sizing: border-box;
     }
 
-    /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+    /**
+     * Prevent text size adjustments on mobile devices
+     * Maintains consistent typography across different devices
+     * Reference: https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
+     */
     html {
         -moz-text-size-adjust: none;
         -webkit-text-size-adjust: none;
         text-size-adjust: none;
     }
 
+    /**
+     * Remove default margins from common elements
+     * Creates a clean slate for custom spacing
+     */
     body,
     h1,
     h2,
@@ -30,18 +72,30 @@
         margin: 0;
     }
 
-    /* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
+    /**
+     * Reset list styles for elements with list role
+     * Ensures accessibility while removing default styling
+     * Reference: https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+     */
     [role="list"] {
         list-style: none;
         margin: 0;
         padding: 0;
     }
 
+    /**
+     * Base body styles
+     * Sets minimum height and readable line spacing
+     */
     body {
-        min-block-size: 100vh;
-        line-height: 1.6;
+        min-block-size: 100vh;  /* Ensures body takes full viewport height */
+        line-height: 1.6;       /* Improves text readability */
     }
 
+    /**
+     * Tighter line height for headings and form elements
+     * Improves visual hierarchy and form appearance
+     */
     h1,
     h2,
     h3,
@@ -51,6 +105,11 @@
         line-height: 1.1;
     }
 
+    /**
+     * Modern text wrapping for better typography
+     * - balance: Prevents orphaned words in headings
+     * - pretty: Improves line breaks in body text
+     */
     h1,
     h2,
     h3,
@@ -63,115 +122,176 @@
         text-wrap: pretty;
     }
 
+    /**
+     * Responsive images and pictures
+     * Prevents overflow and maintains aspect ratios
+     */
     img,
     picture {
-        max-inline-size: 100%;
-        display: block;
+        max-inline-size: 100%;  /* Responsive width */
+        display: block;         /* Removes inline spacing issues */
     }
 
+    /**
+     * Form elements inherit font styles
+     * Ensures consistent typography across all form controls
+     */
     input,
     button,
     textarea,
     select {
         font: inherit;
     }
-
 }
 
+/* ============================================================================
+   BASE LAYER - DESIGN TOKENS & TYPOGRAPHY
+   ============================================================================ */
+
 @layer base {
+    /**
+     * DESIGN TOKENS - PRIMITIVE VALUES
+     *
+     * These are the foundational design values that define the visual language.
+     * They are organized into logical groups for easy maintenance and consistency.
+     */
     :root {
-        /*colors*/
+        /* ===== COLOR PALETTE ===== */
+        /* Primary brand colors - warm orange tones for mushroom theme */
         --clr-white: hsl(0, 0%, 100%);
-        --clr-gray-100: hsl(0, 2%, 79%);
-        --clr-brand-400: hsl(25, 88%, 75%);
-        --clr-brand-500: hsl(25, 88%, 66%);
-        --clr-green-400: hsl(143, 19%, 49%);
-        --clr-green-500: hsl(143, 38%, 37%);
-        --clr-green-600: hsl(145, 29%, 19%);
-        --clr-brown-500: hsl(10, 5%, 25%);
-        --clr-brown-600: hsl(9, 7%, 21%);
-        --clr-brown-700: hsl(9, 8%, 16%);
-        --clr-brown-800: hsl(0, 6%, 15%);
-        --clr-brown-900: hsl(0, 6%, 13%);
+        --clr-gray-100: hsl(0, 2%, 79%);        /* Light gray for body text */
+        --clr-brand-400: hsl(25, 88%, 75%);     /* Light brand orange */
+        --clr-brand-500: hsl(25, 88%, 66%);     /* Main brand orange */
 
-        --clr-orange-500: hsl(28, 43%, 28%);
-        --clr-red-500: hsl(359, 34%, 24%);
-        --clr-teal-500: hsl(186, 42%, 25%);
+        /* Accent colors - earthy greens for nature theme */
+        --clr-green-400: hsl(143, 19%, 49%);    /* Light accent green */
+        --clr-green-500: hsl(143, 38%, 37%);    /* Main accent green */
+        --clr-green-600: hsl(145, 29%, 19%);    /* Dark accent green */
 
-        /*typography*/
-        --ff-heading: "Outfit", sans-serif;
-        --ff-body: "Fira Sans", sans-serif;
+        /* Background colors - rich brown tones for earthy feel */
+        --clr-brown-500: hsl(10, 5%, 25%);      /* Lightest brown */
+        --clr-brown-600: hsl(9, 7%, 21%);       /* Light brown */
+        --clr-brown-700: hsl(9, 8%, 16%);       /* Main brown */
+        --clr-brown-800: hsl(0, 6%, 15%);       /* Dark brown */
+        --clr-brown-900: hsl(0, 6%, 13%);       /* Darkest brown */
 
-        --fs-300: 0.875rem;
-        --fs-400: 1rem;
-        --fs-500: 1.125rem;
-        --fs-600: 1.25rem;
-        --fs-700: 1.5rem;
-        --fs-800: 2rem;
-        --fs-900: 3.75rem;
-        --fs-1000: 3.75rem;
+        /* Semantic colors for mushroom tags */
+        --clr-orange-500: hsl(28, 43%, 28%);    /* Fall season indicator */
+        --clr-red-500: hsl(359, 34%, 24%);      /* Toxic mushroom indicator */
+        --clr-teal-500: hsl(186, 42%, 25%);     /* Spring season indicator */
 
+        /* ===== TYPOGRAPHY SYSTEM ===== */
+        /* Font families - carefully chosen for readability and character */
+        --ff-heading: "Outfit", sans-serif;     /* Modern, friendly headings */
+        --ff-body: "Fira Sans", sans-serif;     /* Highly readable body text */
+
+        /* Font size scale - mobile-first responsive typography */
+        --fs-300: 0.875rem;   /* 14px - Small text */
+        --fs-400: 1rem;       /* 16px - Base body text */
+        --fs-500: 1.125rem;   /* 18px - Medium text */
+        --fs-600: 1.25rem;    /* 20px - Large text */
+        --fs-700: 1.5rem;     /* 24px - Small headings */
+        --fs-800: 2rem;       /* 32px - Medium headings */
+        --fs-900: 3.75rem;    /* 60px - Large headings */
+        --fs-1000: 3.75rem;   /* 60px - Extra large headings */
+
+        /**
+         * Responsive typography scaling for larger screens
+         * Increases font sizes proportionally for better readability on desktop
+         */
         @media (width > 760px) {
-            --fs-300: 0.875rem;
-            --fs-400: 1rem;
-            --fs-500: 1.25rem;
-            --fs-600: 1.5rem;
-            --fs-700: 2rem;
-            --fs-800: 3rem;
-            --fs-900: 5rem;
-            --fs-1000: 7.5rem;
+            --fs-300: 0.875rem;   /* 14px - Stays same */
+            --fs-400: 1rem;       /* 16px - Stays same */
+            --fs-500: 1.25rem;    /* 20px - Increased */
+            --fs-600: 1.5rem;     /* 24px - Increased */
+            --fs-700: 2rem;       /* 32px - Increased */
+            --fs-800: 3rem;       /* 48px - Increased */
+            --fs-900: 5rem;       /* 80px - Increased */
+            --fs-1000: 7.5rem;    /* 120px - Increased */
         }
     }
+    /**
+     * SEMANTIC DESIGN TOKENS
+     *
+     * These tokens map primitive values to semantic purposes.
+     * This abstraction allows for easy theme changes and ensures consistency.
+     */
     :root {
-        /* primitives here */
-        --text-main: var(--clr-gray-100);
-        --text-high-contrast: var(--clr-white);
-        --text-brand: var(--clr-brand-500);
-        --text-brand-light: var(--clr-brand-400);
+        /* ===== TEXT COLORS ===== */
+        --text-main: var(--clr-gray-100);           /* Primary body text */
+        --text-high-contrast: var(--clr-white);     /* High contrast text (headings) */
+        --text-brand: var(--clr-brand-500);         /* Brand colored text */
+        --text-brand-light: var(--clr-brand-400);   /* Light brand text (hover states) */
 
+        /* ===== BACKGROUND COLORS ===== */
+        /* Accent backgrounds - green theme for call-to-action areas */
         --background-accent-light: var(--clr-green-400);
         --background-accent-main: var(--clr-green-500);
         --background-accent-dark: var(--clr-green-600);
 
+        /* Main backgrounds - brown theme for content areas */
         --background-extra-light: var(--clr-brown-500);
         --background-light: var(--clr-brown-600);
-        --background-main: var(--clr-brown-700);
+        --background-main: var(--clr-brown-700);        /* Primary background */
         --background-dark: var(--clr-brown-800);
         --background-extra-dark: var(--clr-brown-900);
 
-        --font-size-heading-sm: var(--fs-700);
-        --font-size-heading-regular: var(--fs-800);
-        --font-size-heading-lg: var(--fs-900);
-        --font-size-heading-xl: var(--fs-1000);
+        /* ===== TYPOGRAPHY SCALE ===== */
+        /* Heading sizes - semantic naming for different heading levels */
+        --font-size-heading-sm: var(--fs-700);      /* h3, h4 */
+        --font-size-heading-regular: var(--fs-800); /* h2 */
+        --font-size-heading-lg: var(--fs-900);      /* h1 */
+        --font-size-heading-xl: var(--fs-1000);     /* Hero titles */
 
-        --font-size-sm: var(--fs-300);
-        --font-size-regular: var(--fs-400);
-        --font-size-md: var(--fs-500);
-        --font-size-lg: var(--fs-600);
+        /* Body text sizes - semantic naming for different text purposes */
+        --font-size-sm: var(--fs-300);              /* Small text, captions */
+        --font-size-regular: var(--fs-400);         /* Body text */
+        --font-size-md: var(--fs-500);              /* Emphasized body text */
+        --font-size-lg: var(--fs-600);              /* Large body text */
 
-        --border-radius-1: 0.25rem;
-        --border-radius-2: 0.5rem;
-        --border-radius-3: 0.75rem;
+        /* ===== BORDER RADIUS SCALE ===== */
+        --border-radius-1: 0.25rem;  /* 4px - Small elements */
+        --border-radius-2: 0.5rem;   /* 8px - Medium elements */
+        --border-radius-3: 0.75rem;  /* 12px - Large elements */
     }
 
+    /* ===== BASE ELEMENT STYLES ===== */
+
+    /**
+     * HTML element - document foundation
+     * Sets base typography and enables smooth scrolling
+     */
     html {
         font-family: var(--ff-body), sans-serif;
         line-height: 1.6;
     }
 
+    /**
+     * Smooth scrolling for users who don't prefer reduced motion
+     * Provides polished navigation experience with proper offset for fixed headers
+     */
     @media (prefers-reduced-motion: no-preference) {
         html {
             scroll-behavior: smooth;
-            scroll-padding: 3rem;
+            scroll-padding: 3rem;  /* Accounts for fixed header height */
         }
     }
 
+    /**
+     * Body element - main content container
+     * Establishes the primary typography and color scheme
+     */
     body {
         font-family: var(--ff-body), sans-serif;
         font-size: var(--font-size-regular);
         color: var(--text-main);
         background-color: var(--background-main);
     }
+
+    /**
+     * Heading elements - visual hierarchy
+     * Uses display font for character and high contrast for readability
+     */
     h1,
     h2,
     h3,
@@ -181,6 +301,10 @@
         color: var(--text-high-contrast);
     }
 
+    /**
+     * Link elements - navigation and interaction
+     * High contrast default with brand color on interaction
+     */
     a {
         color: var(--text-high-contrast);
     }
@@ -190,6 +314,10 @@
         color: var(--text-brand-light);
     }
 
+    /**
+     * Image elements - consistent styling
+     * Rounded corners for softer, more organic feel
+     */
     img {
         border-radius: var(--border-radius-3);
     }
