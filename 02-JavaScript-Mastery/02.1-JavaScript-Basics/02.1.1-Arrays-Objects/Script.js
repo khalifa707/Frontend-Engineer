@@ -30,6 +30,7 @@ x = arr.indexOf(4); //find the index of a value
 console.log(arr);
 console.log(x);*/
 
+/*
 let x;
 const fruit = ["apple", "banana", "orange", "pear"];
 const berries = ["strawberry", "blueberry", "raspberry"];
@@ -56,4 +57,18 @@ const b = 2;
 const c = 3;
 x = Array.of(a, b, c);
 
-console.log(x);
+console.log(x);*/
+
+/*
+//Array Challenge
+const arr = [1, 2, 3, 4, 5, 6];
+arr.reverse();
+console.log(arr);
+
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [5, 6, 7, 8, 9, 10];
+arr1.pop(); // This removes the last element (5) from arr1
+x = arr1.concat(arr2); // Now arr1 is [1, 2, 3, 4] and gets concatenated with arr2
+console.log(x);*/
+
+
