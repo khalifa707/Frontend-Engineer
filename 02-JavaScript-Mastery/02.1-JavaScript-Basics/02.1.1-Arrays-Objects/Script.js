@@ -29,3 +29,31 @@ x = arr.indexOf(4); //find the index of a value
 
 console.log(arr);
 console.log(x);*/
+
+let x;
+const fruit = ["apple", "banana", "orange", "pear"];
+const berries = ["strawberry", "blueberry", "raspberry"];
+
+// fruit.push(berries);
+// x = fruit[4][1];
+
+const allFruits = [fruit, berries];
+x = allFruits[0][1];
+x = fruit.concat(berries);
+
+//Spread Operator
+x = [...fruit, ...berries];
+
+//Flatten Array
+const arr = [1, 2, [3, 4], 5, [6, 7], 8];
+x = arr.flat();
+
+//Static Methods
+x = Array.isArray(fruit); //check if it is an array
+x = Array.from("12345"); //create an array from an array-like object
+const a = 1;
+const b = 2;
+const c = 3;
+x = Array.of(a, b, c);
+
+console.log(x);
