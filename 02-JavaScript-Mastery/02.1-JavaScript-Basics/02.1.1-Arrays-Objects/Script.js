@@ -71,4 +71,16 @@ arr1.pop(); // This removes the last element (5) from arr1
 x = arr1.concat(arr2); // Now arr1 is [1, 2, 3, 4] and gets concatenated with arr2
 console.log(x);*/
 
-
+// Starting With Objects
+const person = {
+    name: 'John',
+    age: 30,
+    isStudent: false,
+    address: {
+        street: '123 Main St',
+        city: 'New York',
+        state: 'NY'
+    },
+    hobbies: ['reading', 'coding', 'gaming']
+}
+console.log(person.hobbies[0]);
