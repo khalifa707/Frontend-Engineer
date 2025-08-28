@@ -122,3 +122,25 @@ x= Object.entries(todo);
 x= Object.hasOwnProperty('age');
 
 console.log(x);*/
+
+// Destructuring & Naming
+
+const firstName = 'John';
+const lastName = 'Doe';
+const age = 30;
+
+const person = {
+    firstName,
+    lastName,
+    age
+}
+
+console.log(person.age);
+
+const todo = {
+    id: 1,
+    title: 'Take out trash',
+    user: {
+        name: 'John'
+    }
+}
