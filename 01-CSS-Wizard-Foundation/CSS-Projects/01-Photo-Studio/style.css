@@ -1,0 +1,110 @@
+@layer reset {
+    /**
+     * Universal box-sizing reset
+     * Ensures all elements use border-box sizing for predictable layouts
+     */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    /**
+     * Prevent text size adjustments on mobile devices
+     * Maintains consistent typography across different devices
+     * Reference: https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
+     */
+    html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+
+    /**
+     * Remove default margins from common elements
+     * Creates a clean slate for custom spacing
+     */
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    figure,
+    blockquote,
+    dl,
+    dd {
+        margin: 0;
+    }
+
+    /**
+     * Reset list styles for elements with list role
+     * Ensures accessibility while removing default styling
+     * Reference: https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+     */
+    [role="list"] {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /**
+     * Base body styles
+     * Sets minimum height and readable line spacing
+     */
+    body {
+        min-block-size: 100vh;  /* Ensures body takes full viewport height */
+        line-height: 1.6;       /* Improves text readability */
+    }
+
+    /**
+     * Tighter line height for headings and form elements
+     * Improves visual hierarchy and form appearance
+     */
+    h1,
+    h2,
+    h3,
+    button,
+    input,
+    label {
+        line-height: 1.1;
+    }
+
+    /**
+     * Modern text wrapping for better typography
+     * - balance: Prevents orphaned words in headings
+     * - pretty: Improves line breaks in body text
+     */
+    h1,
+    h2,
+    h3,
+    h4 {
+        text-wrap: balance;
+    }
+
+    p,
+    li {
+        text-wrap: pretty;
+    }
+
+    /**
+     * Responsive images and pictures
+     * Prevents overflow and maintains aspect ratios
+     */
+    img,
+    picture {
+        max-inline-size: 100%;  /* Responsive width */
+        display: block;         /* Removes inline spacing issues */
+    }
+
+    /**
+     * Form elements inherit font styles
+     * Ensures consistent typography across all form controls
+     */
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
+}
