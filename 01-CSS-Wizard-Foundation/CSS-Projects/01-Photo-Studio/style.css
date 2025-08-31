@@ -147,16 +147,17 @@
 @layer utilities {
 
     .title{
-        font-family: var(--ff-heading) sans-serif;
+        font-family: var(--ff-heading), sans-serif;
         font-weight: var(--fw-heading);
         font-size: var(--fs-heading);
         line-height: var(--lh-heading);
         letter-spacing: var(--ls-heading);
         color: var(--clr-black);
+        text-transform: capitalize;
     }
 
     .body-copy{
-        font-family: var(--ff-body) sans-serif;
+        font-family: var(--ff-body), sans-serif;
         font-weight: var(--fw-body);
         font-size: var(--fs-body);
         line-height: var(--lh-body);
@@ -164,10 +165,11 @@
     }
 
     .list{
-        font-family: var(--ff-list) sans-serif;
+        font-family: var(--ff-list), sans-serif;
         font-weight: var(--fw-list);
         font-size: var(--fs-list);
         line-height: var(--lh-list);
         color: var(--clr-gray);
+        text-transform: capitalize;
     }
 }
