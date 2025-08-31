@@ -108,3 +108,37 @@
         font: inherit;
     }
 }
+
+@layer base {
+    :root {
+        /*colors*/
+        --clr-white: #EEEEEE;
+        --clr-gray: #595959;
+        --clr-black: #2E2E2E;
+
+        /*Typography*/
+        /* Font Family*/
+        --ff-heading: "Inter", sans-serif;
+        --ff-body: "Inter", sans-serif;
+        --ff-list: "Inter", sans-serif;
+
+        /* Font Weight*/
+        --fw-heading: Bold;
+        --fw-body: Regular;
+        --fw-list: Medium;
+
+        /*Font Sizes*/
+        --fs-heading: clamp(1rem, 0.895rem + 0.6723vw, 1.5rem);
+        --fs-body: clamp(0.875rem, 0.8487rem + 0.1681vw, 1rem);
+        --fs-list: clamp(0.875rem, 0.8487rem + 0.1681vw, 1rem);
+
+        /*Font Height*/
+        --lh-heading: clamp(1.5rem, 1.395rem + 0.6723vw, 2rem);
+        --lh-body: clamp(1.375rem, 1.3487rem + 0.1681vw, 1.5rem);
+        --lh-list: clamp(1.375rem, 1.3487rem + 0.1681vw, 1.5rem);
+
+        /*Letter Spacing*/
+        --ls-heading: -0.96px;
+
+    }
+}
