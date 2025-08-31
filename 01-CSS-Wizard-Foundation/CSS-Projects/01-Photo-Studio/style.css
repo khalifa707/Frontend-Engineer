@@ -153,7 +153,7 @@
         line-height: var(--lh-heading);
         letter-spacing: var(--ls-heading);
         color: var(--clr-black);
-        text-transform: capitalize;
+        text-transform: uppercase;
     }
 
     .body-copy{
