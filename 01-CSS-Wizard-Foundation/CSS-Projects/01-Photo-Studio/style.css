@@ -18,6 +18,7 @@
         -moz-text-size-adjust: none;
         -webkit-text-size-adjust: none;
         text-size-adjust: none;
+        background-color: var(--clr-white);
     }
 
     /**
@@ -54,7 +55,7 @@
      */
     body {
         min-block-size: 100vh;  /* Ensures body takes full viewport height */
-        line-height: 1.6;       /* Improves text readability */
+        line-height: 1.6; /* Improves text readability */
     }
 
     /**
@@ -151,6 +152,7 @@
         font-size: var(--fs-heading);
         line-height: var(--lh-heading);
         letter-spacing: var(--ls-heading);
+        color: var(--clr-black);
     }
 
     .body-copy{
@@ -158,6 +160,7 @@
         font-weight: var(--fw-body);
         font-size: var(--fs-body);
         line-height: var(--lh-body);
+        color: var(--clr-gray);
     }
 
     .list{
@@ -165,5 +168,6 @@
         font-weight: var(--fw-list);
         font-size: var(--fs-list);
         line-height: var(--lh-list);
+        color: var(--clr-gray);
     }
 }
