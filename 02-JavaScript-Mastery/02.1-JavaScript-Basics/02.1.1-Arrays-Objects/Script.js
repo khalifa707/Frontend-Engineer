@@ -221,4 +221,17 @@ function getRandom(arr) {
 }
 getRandom([1, 2, 3, 4, 5]);*/
 
+/*
 // Global Function & Scope
+let x = 100;
+function run () {
+    console.log(x, 'In The Function');
+}
+run();
+
+function add(a, b) {
+    let y = 10;
+    console.log(y, 'In The Global Scope');
+    console.log(x + y);
+}
+add();*/
