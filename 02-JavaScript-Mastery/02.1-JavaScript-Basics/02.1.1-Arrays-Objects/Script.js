@@ -145,3 +145,17 @@ const todo = {
     }
 }*/
 
+/*
+//JSON Intro
+const post = {
+    id: 1,
+    title: 'Post One',
+    body: 'This is the body'
+}
+
+// convert JSON String
+const str = JSON.stringify(post);
+//Parse JSON
+const obj = JSON.parse(str);
+console.log(str);
+console.log(obj);*/
