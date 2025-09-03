@@ -179,3 +179,46 @@ function subtract (num1, num2) {
 }
 const result = subtract(10, 5);
 console.log(result);*/
+
+/*
+// More on Parameters & Arguments
+//Default Parameters
+function registerUser(user){
+    return user + ' is registered';
+}
+console.log(registerUser('John'));
+
+function registerUser(user = 'Bot'){
+    return user + ' is registered';
+}
+console.log(registerUser());
+
+// Rest Parameters
+function sum(...numbers) {
+    let total = 0;
+    for (const num of numbers) {
+        total += num;
+    }
+    return total;
+}
+console.log(sum(1, 2, 3, 4, 5));
+
+// Objects as Parameters
+function loginUser(user) {
+    return `The user ${user.name} with the id of ${user.id} is logged in`;
+}
+const user = {
+    id: 1,
+    name: 'John'
+}
+console.log(loginUser(user));
+
+//Array as Parameters
+function getRandom(arr) {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    const item = arr[randomIndex];
+    console.log(item);
+}
+getRandom([1, 2, 3, 4, 5]);*/
+
+// Global Function & Scope
