@@ -123,7 +123,7 @@ x= Object.hasOwnProperty('age');
 
 console.log(x);*/
 
-// Destructuring & Naming
+/*// Destructuring & Naming
 
 const firstName = 'John';
 const lastName = 'Doe';
@@ -143,4 +143,5 @@ const todo = {
     user: {
         name: 'John'
     }
-}
+}*/
+
