@@ -285,3 +285,8 @@ const subtract = (a, b) => {
     return a - b;
 }
 console.log(subtract(100, 200));*/
+
+/*// Immediately Invoked Function Expression (IIFE)
+(function () {
+    console.log('IIFE');
+})();*/
