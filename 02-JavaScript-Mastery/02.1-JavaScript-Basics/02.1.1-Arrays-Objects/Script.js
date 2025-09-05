@@ -267,3 +267,21 @@ const addPlusSign = function (value) {
     return '+' + value;
 }
 console.log(addPlusSign(100));*/
+
+/*
+//Arrow Functions
+
+const addSign = (value) => {
+    return '$' + value;
+}
+console.log(addSign(100));
+
+const add = (a, b) => {
+    return a + b;
+}
+console.log(add(100, 200));
+
+const subtract = (a, b) => {
+    return a - b;
+}
+console.log(subtract(100, 200));*/
