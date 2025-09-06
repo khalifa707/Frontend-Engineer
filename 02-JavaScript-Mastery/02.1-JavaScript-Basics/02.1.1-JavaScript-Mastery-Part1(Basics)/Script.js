@@ -319,5 +319,38 @@ for (let i = 1; i <=10; i++){
     }
 }*/
 
+/*
+//While & Do While Loops
+
+/!*let i = 0;
+while (i <= 10){
+    console.log('Number ' + i);
+    i++;
+}*!/
+
+//loop through an array
+/!*const arr = [1, 2, 3, 4, 5];
+let j = 0;
+while (j < arr.length){
+    console.log(arr[j]);
+    j++;
+}*!/
+
+//Nested While Loops
+/!*let k = 0;
+while (k <= 10){
+    let l = 0;
+    while (l <= 10){
+        console.log(`${k} * ${l} = ${k * l}`);
+        l++;
+    }
+    k++;
+}*!/
+/!*let i = 1;
+do {
+    console.log('Number ' + i);
+    i++;
+} while (i <= 10);*!/
+*/
 
 
