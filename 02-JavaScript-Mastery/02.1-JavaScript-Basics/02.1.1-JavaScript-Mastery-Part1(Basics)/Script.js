@@ -441,3 +441,54 @@ const cart = [
 ];
 const total = cart.reduce((acc, cur) => acc + cur.price, 0);
 console.log(total);*/
+
+/*
+//Array Challenge
+const people = [
+    {
+        name: 'John',
+        lastName: 'Doe',
+        email: 'john@gmail.com',
+        age: 30,
+        phone: '123-456-7890',
+    },
+    {
+        name: 'Jane',
+        lastName: 'Poe',
+        email: 'jane@gmail.com',
+        age: 25,
+        phone: '123-456-7890',
+    },
+    {
+        name: 'Bob',
+        lastName: 'Roe',
+        email: 'bob@gmail.com',
+        age: 28,
+        phone: '123-456-7890',
+    },
+    {
+        name: 'Sam',
+        lastName: 'Sulek',
+        email: 'sam@gmail.com',
+        age: 32,
+        phone: '123-456-7890',
+    },
+]
+
+const youngPeople = people.filter((person) => person.age < 30);
+const youngPeopleNames = youngPeople.map((person) => person.name);
+const youngPeopleNamesAndAges = youngPeople.map((person) => {
+    return {
+        name: person.name,
+        age: person.age,
+    };
+});
+const youngPeopleNamesAndAgesAndEmail = youngPeople.map((person) => {
+    return {
+        name: person.name,
+        age: person.age,
+        email: person.email,
+    };
+});
+
+console.log(youngPeopleNamesAndAgesAndEmail);*/
