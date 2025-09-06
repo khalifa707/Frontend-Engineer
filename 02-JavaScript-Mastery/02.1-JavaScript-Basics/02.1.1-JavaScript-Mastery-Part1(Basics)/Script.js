@@ -161,6 +161,7 @@ const obj = JSON.parse(str);
 console.log(str);
 console.log(obj);*/
 
+
 // *********** Functions, Scope & Execution Context ***********
 /*
 // Function Basics
@@ -290,3 +291,33 @@ console.log(subtract(100, 200));*/
 (function () {
     console.log('IIFE');
 })();*/
+
+
+// *********** Logic & Control Flow ***********
+/*//For Loop
+
+for (let i = 0; i <=10; i++){
+    console.log(i);
+}
+
+for (let i = 0; i <10; i++){
+    console.log(i);
+}
+
+ for (let i = 0; i <=10; i++){
+     if (i === 5) {
+        console.log('5 is my favorite number');
+         continue;
+     }
+     console.log(i);
+ }
+
+for (let i = 1; i <=10; i++){
+    console.log('Number' + i);
+    for (let j = 1; j <=10; j++){
+        console.log(`${i} * ${j} = ${i * j}`);
+    }
+}*/
+
+
+
