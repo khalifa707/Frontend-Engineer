@@ -365,3 +365,10 @@ for (let i = 1; i <= 100; i++) {
         console.log(i);
     }
 }*/
+
+/*//Array.forEach()
+const socials = ['Twitter', 'LinkedIn', 'Facebook', 'Instagram'];
+/!*socials.forEach(function (item) {
+    console.log(item);})*!/
+socials.forEach((item) => console.log(item));
+socials.forEach((item, index, array) => console.log(`${index} - ${item}`));*/
