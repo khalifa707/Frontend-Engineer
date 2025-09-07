@@ -12,3 +12,29 @@ document.querySelector('#stop').addEventListener('click', () => {
     console.log('Timer Cancelled');
 });*/
 
+/*
+//setInterval & clearInterval
+/!*const intervalId = setInterval(myCallback, 1000);
+
+function myCallback() {
+    console.log(Date.now());
+}*!/
+let intervalId;
+
+function startChange() {
+    if(!intervalId){
+        intervalId = setInterval(changeColor, 1000);
+    }
+}
+
+function changeColor() {
+    const colors = ['red', 'green', 'blue', 'yellow', 'orange', 'purple'];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    document.querySelector('.text').style.color = colors[randomIndex];
+}
+
+function stopChange() {
+    clearInterval(intervalId);
+}
+document.getElementById('start').addEventListener('click', startChange);
+document.getElementById('stop').addEventListener('click', stopChange);*/
