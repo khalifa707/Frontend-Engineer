@@ -130,3 +130,18 @@ getUser.then((user) => {
 }).catch((error) => {
     console.log(error)
 })*/
+
+/*
+//Fetch API
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+}).then((response) => {
+    return response.json();
+}).then((data) => {
+    console.log(data);
+}).catch((error) => {
+    console.log(error);
+});*/
