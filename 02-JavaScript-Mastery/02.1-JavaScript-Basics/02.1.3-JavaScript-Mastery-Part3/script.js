@@ -65,3 +65,68 @@ function getPosts() {
 
 createPost({title: 'Post Three', body: 'This is post three'}, getPosts);
 getPosts();*/
+
+/*
+//Promises
+/!*const promise = new Promise((resolve, reject) => {
+    //Do some Async task
+    setTimeout(() => {
+        console.log('Async task complete');
+        resolve();
+    }, 1000);
+});
+
+promise.then(()=>{
+    console.log('Promise consumed');
+});
+const promise2 = new Promise((resolve, reject) => {
+    //Do some Async task
+    setTimeout(() => {
+        resolve({name: 'John', age: 30});
+    }, 1000);
+}).then((user) => {
+    console.log(user);
+});*!/
+
+const getUser = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let error = false;
+        if (!error) {
+            resolve({name: 'John', age: 30});
+        } else {
+            reject('Error: Something went wrong');
+        }
+    }, 1000);
+})
+
+getUser.then((user) => {
+    console.log(user);
+}).catch((error) => {
+    console.log(error)
+}).finally(() => {
+    console.log('Promise finally resolved');
+});*/
+
+/*//Promise Chaining
+const getUser = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let error = false;
+        if (!error) {
+            resolve({name: 'John', age: 30});
+        } else {
+            reject('Error: Something went wrong');
+        }
+    }, 1000);
+})
+
+getUser.then((user) => {
+    console.log(user);
+    return user.name;
+}).then((name) => {
+    console.log(name);
+    return name.length;
+}).then((length) => {
+    console.log(length);
+}).catch((error) => {
+    console.log(error)
+})*/
