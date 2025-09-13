@@ -199,3 +199,23 @@ async function getUsers(){
     console.log(data);
 }
 getUsers();*/
+
+/*//Try Catch Statement
+/!*try {
+    console.log(x);
+} catch(error) {
+    console.log('Error: ' + error);
+}*!/
+
+function double (num) {
+    if (isNaN(num)) {
+        throw new Error('Not a number');
+    }
+    return num * 2;
+}
+try {
+    const y = double("a")
+    console.log(y);
+} catch (error){
+    console.log('Error: ' + error);
+}*/
