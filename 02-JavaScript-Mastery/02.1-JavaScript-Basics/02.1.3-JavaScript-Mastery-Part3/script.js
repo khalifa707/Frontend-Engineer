@@ -146,6 +146,7 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
     console.log(error);
 });*/
 
+/*
 //Fetch Options
 function createPost({title, body}) {
     fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -160,4 +161,4 @@ function createPost({title, body}) {
         }
     }).then(res=> res.json()).then(data => console.log(data));
 }
-createPost({title: 'Custom Post', body: 'This is a custom post'});
+createPost({title: 'Custom Post', body: 'This is a custom post'});*/
