@@ -162,3 +162,18 @@ function createPost({title, body}) {
     }).then(res=> res.json()).then(data => console.log(data));
 }
 createPost({title: 'Custom Post', body: 'This is a custom post'});*/
+
+/*
+//Fetch Api Error Handling
+fetch('https://httpstat.us/200')
+.then((response) => {
+    console.log('Response status:', response.status);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response;
+}).then(() => {
+    console.log('Success');
+}).catch((error) => {
+    console.error('Fetch error:', error);
+});*/
