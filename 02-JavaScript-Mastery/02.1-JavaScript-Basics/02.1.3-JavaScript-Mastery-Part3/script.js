@@ -177,3 +177,25 @@ fetch('https://httpstat.us/200')
 }).catch((error) => {
     console.error('Fetch error:', error);
 });*/
+
+/*
+//Async & Await
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Promise resolved');
+    }, 1000);
+});
+
+async function getPromise(){
+    const response = await promise;
+    console.log(response);
+}
+
+// getPromise();
+
+async function getUsers(){
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await response.json();
+    console.log(data);
+}
+getUsers();*/
