@@ -87,14 +87,43 @@ async function displayPopularShows() {
     }
 }
 
+//Display Backdrop on Details pages
+function displayBackgroundImage(type, backgroundPath) {
+    // Remove any existing backdrop
+    const existingBackdrop = document.querySelector('.backdrop');
+    if (existingBackdrop) {
+        existingBackdrop.remove();
+    }
+
+    const overlayDiv = document.createElement('div');
+    overlayDiv.classList.add('backdrop');
+    overlayDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${backgroundPath})`;
+    overlayDiv.style.backgroundSize = 'cover';
+    overlayDiv.style.backgroundPosition = 'center center';
+    overlayDiv.style.backgroundRepeat = 'no-repeat';
+    overlayDiv.style.position = 'fixed';
+    overlayDiv.style.top = '0';
+    overlayDiv.style.left = '0';
+    overlayDiv.style.width = '100%';
+    overlayDiv.style.height = '100%';
+    overlayDiv.style.zIndex = '-1';
+    overlayDiv.style.opacity = '0.3'; // Make it subtle so content is readable
+
+    // Append to body instead of the details container
+    document.body.appendChild(overlayDiv);
+}
+
+// Remove backdrop when leaving details pages
+function removeBackdrop() {
+    const existingBackdrop = document.querySelector('.backdrop');
+    if (existingBackdrop) {
+        existingBackdrop.remove();
+    }
+}
+
 // Display Movie Details
 async function displayMovieDetails() {
-    console.log('displayMovieDetails called');
-    console.log('Current URL:', window.location.href);
-    console.log('Search params:', window.location.search);
-
     const movieID = window.location.search.split('=')[1];
-    console.log('Movie ID:', movieID);
 
     if (!movieID) {
         console.error('No movie ID found in URL');
@@ -102,12 +131,8 @@ async function displayMovieDetails() {
     }
 
     try {
-        console.log('Fetching movie data for ID:', movieID);
         const movie = await fetchAPIData(`movie/${movieID}`);
-        console.log('Movie data received:', movie);
-
         const movieDetailsContainer = document.querySelector('#movie-details');
-        console.log('Container found:', movieDetailsContainer);
 
         if (!movieDetailsContainer) {
             console.error('Movie details container not found');
@@ -159,6 +184,11 @@ async function displayMovieDetails() {
                     : 'No production companies available'}</div>
             </div>
         `;
+
+        // Display backdrop image if available
+        if (movie.backdrop_path) {
+            displayBackgroundImage('movie', movie.backdrop_path);
+        }
     } catch (error) {
         console.error('Error loading movie details:', error);
     }
@@ -181,8 +211,76 @@ async function fetchAPIData(endpoint) {
 
 
 // Display Show Details
-function displayShowDetails() {
-    // TODO: Implement show details functionality
+async function displayShowDetails() {
+    const showID = window.location.search.split('=')[1];
+
+    if (!showID) {
+        console.error('No show ID found in URL');
+        return;
+    }
+
+    try {
+        const show = await fetchAPIData(`tv/${showID}`);
+        const showDetailsContainer = document.querySelector('#show-details');
+
+        if (!showDetailsContainer) {
+            console.error('Show details container not found');
+            return;
+        }
+
+        // Clear existing content and set new HTML directly
+        showDetailsContainer.innerHTML = `
+            <div class="details-top">
+                <div>
+                    <img
+                        src="${show.poster_path
+                            ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
+                            : 'images/no-image.jpg'}"
+                        class="card-img-top"
+                        alt="${show.name}"
+                    />
+                </div>
+                <div>
+                    <h2>${show.name}</h2>
+                    <p>
+                        <i class="fas fa-star text-primary"></i>
+                        ${show.vote_average} / 10
+                    </p>
+                    <p class="text-muted">First Air Date: ${show.first_air_date}</p>
+                    <p class="text-muted">Last Air Date: ${show.last_air_date}</p>
+                    <p>${show.overview}</p>
+                    <h5>Genres</h5>
+                    <ul class="list-group">
+                        ${show.genres && show.genres.length > 0
+                            ? show.genres.map(genre => `<li>${genre.name}</li>`).join('')
+                            : '<li>No genres available</li>'}
+                    </ul>
+                    ${show.homepage
+                        ? `<a href="${show.homepage}" target="_blank" class="btn">Visit Show Homepage</a>`
+                        : ''}
+                </div>
+            </div>
+            <div class="details-bottom">
+                <h2>Show Info</h2>
+                <ul>
+                    <li><span class="text-secondary">Number of Episodes:</span> ${show.number_of_episodes || 'N/A'}</li>
+                    <li><span class="text-secondary">Number of Seasons:</span> ${show.number_of_seasons || 'N/A'}</li>
+                    <li><span class="text-secondary">Status:</span> ${show.status || 'N/A'}</li>
+                </ul>
+                <h4>Production Companies</h4>
+                <div class="list-group">${show.production_companies && show.production_companies.length > 0
+                    ? show.production_companies.map(company => company.name).join(', ')
+                    : 'No production companies available'}</div>
+            </div>
+        `;
+
+        // Display backdrop image if available
+        if (show.backdrop_path) {
+            displayBackgroundImage('tv', show.backdrop_path);
+        }
+    } catch (error) {
+        console.error('Error loading show details:', error);
+    }
 }
 
 // Search functionality
@@ -192,7 +290,9 @@ function search() {
 
 // Initialize App
 function init() {
-    console.log('Init called, current page:', global.currentPage);
+    // Remove any existing backdrop first
+    removeBackdrop();
+
     switch (global.currentPage) {
         case '/':
         case '/index.html':
