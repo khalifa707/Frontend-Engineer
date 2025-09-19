@@ -1,6 +1,8 @@
 :root {
     --dark-color: #19283f;
     --green-color: #33d1cc;
+    --red-color: #ff3150;
+    --yellow-color: #ffc400;
 }
 
 body {
@@ -31,4 +33,13 @@ body {
 }
 .navbar .navbar-toggler:focus {
     box-shadow: none;
+}
+.main-btn {
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+    padding: .5rem 1rem;
+}
+.landing {
+    background-color: var(--dark-color);
+    min-height: calc(100vh - 72px);
 }
