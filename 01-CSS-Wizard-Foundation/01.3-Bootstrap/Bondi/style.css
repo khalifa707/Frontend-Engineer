@@ -116,3 +116,7 @@ body {
     opacity: 1;
     transform: translateX(0);
 }
+
+.footer{
+    background-color: var(--dark-color);
+}
