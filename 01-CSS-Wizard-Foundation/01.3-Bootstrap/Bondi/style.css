@@ -70,3 +70,49 @@ body {
 .features .icon-holder .icon{
     color: var(--green-color);
 }
+
+.our-work{
+    background-color: var(--section-color);
+}
+
+.our-work ul .active{
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+    cursor: pointer;
+}
+
+.our-work ul li {
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+.our-work ul li:not(.active):hover {
+    color: var(--red-color);
+}
+
+.our-work .box{
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.our-work .box::before{
+    content: attr(data-work);
+    position: absolute;
+    background-color: var(--green-color);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    align-items: center;
+    font-size: 2rem;
+    top: 5px;
+    left: 5px;
+    transition: all .3s ease;
+    opacity: 0;
+    transform: translateX(calc(-100% - 5px));
+}
+.our-work .box:hover::before{
+    opacity: 1;
+    transform: translateX(0);
+}
