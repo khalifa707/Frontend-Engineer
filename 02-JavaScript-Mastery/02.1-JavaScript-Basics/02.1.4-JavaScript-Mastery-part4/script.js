@@ -114,3 +114,34 @@ console.log(rec1.isSquare());
 console.log(rec2.area());
 console.log(rec2.perimeter());
 console.log(rec2.isSquare());*/
+
+/*
+// Object.create()
+const rectanglePrototype = {
+    area: function () {
+        return this.width * this.height;
+    },
+    perimeter: function () {
+        return 2 * (this.width + this.height);
+    },
+    isSquare: function () {
+        return this.width === this.height;
+    }
+}
+function createRectangle(name, width, height) {
+    const rectangle = Object.create(rectanglePrototype);
+    rectangle.name = name;
+    rectangle.width = width;
+    rectangle.height = height;
+    return rectangle;
+}
+
+const rec1 = createRectangle('Rectangle 1', 10, 10);
+const rec2 = createRectangle('Rectangle 2', 20, 30);
+
+console.log(rec1.area());
+console.log(rec1.perimeter());
+console.log(rec1.isSquare());
+console.log(rec2.area());
+console.log(rec2.perimeter());
+console.log(rec2.isSquare());*/
