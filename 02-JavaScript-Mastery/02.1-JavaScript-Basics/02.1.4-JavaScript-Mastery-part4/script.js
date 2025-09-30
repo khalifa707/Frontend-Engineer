@@ -163,3 +163,30 @@ Rectangle.prototype.constructor = Rectangle;
 
 const rec1 = new Rectangle('Rectangle 1', 10, 10);
 console.log(rec1);*/
+
+/*
+//Classes
+class Rectangle {
+    constructor(name, width, height) {
+        this.name = name;
+        this.width = width;
+        this.height = height;
+    }
+
+    area() {
+        return this.width * this.height;
+    }
+
+    perimeter() {
+        return 2 * (this.width + this.height);
+    }
+
+    isSquare() {
+        return this.width === this.height;
+    }
+}
+
+const square = new Rectangle('Square', 20, 20);
+console.log(square.area());
+console.log(square.perimeter());
+console.log(square.isSquare());*/
