@@ -145,3 +145,21 @@ console.log(rec1.isSquare());
 console.log(rec2.area());
 console.log(rec2.perimeter());
 console.log(rec2.isSquare());*/
+
+/*
+//Prototypical Inheritance & Call
+function Shape (name) {
+    this.name = name;
+}
+
+function Rectangle(name, width, height) {
+    Shape.call(this, name);
+    this.width = width;
+    this.height = height;
+}
+
+Rectangle.prototype = Object.create(Shape.prototype);
+Rectangle.prototype.constructor = Rectangle;
+
+const rec1 = new Rectangle('Rectangle 1', 10, 10);
+console.log(rec1);*/
