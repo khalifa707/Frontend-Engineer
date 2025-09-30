@@ -85,3 +85,32 @@ for (let [key, value] of Object.entries(rec1)) {
         console.log(`${key}: ${value}`);
     }
 }*/
+
+/*// Prototype & Prototype Chain
+function Rectangle(name, width, height) {
+    this.name = name;
+    this.width = width;
+    this.height = height;
+}
+
+Rectangle.prototype.area = function () {
+    return this.width * this.height;
+};
+
+Rectangle.prototype.perimeter = function () {
+    return 2 * (this.width + this.height);
+};
+
+Rectangle.prototype.isSquare = function () {
+    return this.width === this.height;
+};
+
+const rec1 = new Rectangle('Rectangle 1', 10, 10);
+const rec2 = new Rectangle('Rectangle 1', 20, 30);
+
+console.log(rec1.area());
+console.log(rec1.perimeter());
+console.log(rec1.isSquare());
+console.log(rec2.area());
+console.log(rec2.perimeter());
+console.log(rec2.isSquare());*/
