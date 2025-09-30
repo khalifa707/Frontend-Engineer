@@ -48,3 +48,40 @@ console.log(strObj.constructor);
 console.log(strLit instanceof String);
 console.log(strObj instanceof String);*/
 
+/*//Working With Object Properties
+function Rectangle(name, width, height) {
+    this.name = name;
+    this.width = width;
+    this.height = height;
+    this.area = () => {
+        return this.width * this.height
+    }
+}
+
+const rec1 = new Rectangle('Rectangle 1', 10, 10);
+const rec2 = new Rectangle('Rectangle 2', 20, 30);
+
+console.log(rec1.hasOwnProperty('name'));
+console.log(rec1.hasOwnProperty('area'));
+console.log(rec1.hasOwnProperty('toString'));
+console.log(rec2.hasOwnProperty('color'));
+
+rec2.perimeter = () => 2*(rec2.width + rec2.height);
+console.log(rec2.perimeter());
+
+delete rec2.perimeter;
+console.log(rec2);
+
+console.log(Object.keys(rec1));
+console.log(Object.values(rec1));
+console.log(Object.entries(rec1));
+
+for (let [key, value] of Object.entries(rec1)) {
+    console.log(`${key}: ${value}`);
+}
+
+for (let [key, value] of Object.entries(rec1)) {
+    if (typeof value !== 'function') {
+        console.log(`${key}: ${value}`);
+    }
+}*/
