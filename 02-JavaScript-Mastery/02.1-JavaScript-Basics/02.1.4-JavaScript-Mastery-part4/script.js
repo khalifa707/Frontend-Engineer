@@ -251,4 +251,18 @@ class Rectangle {
 }
 console.log(Rectangle.isValidDimensions(10, 10));*/
 
+/*
+// Bind() & Defining This
+class App {
+    constructor() {
+        this.serverName = 'localhost';
+        this.serverPort = 3000;
+    }
 
+    getServerName() {
+        console.log(this.serverName);
+    }
+}
+
+const app = new App();
+app.getServerName();*/
