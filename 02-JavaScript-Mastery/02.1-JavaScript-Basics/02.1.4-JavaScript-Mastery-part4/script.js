@@ -266,3 +266,28 @@ class App {
 
 const app = new App();
 app.getServerName();*/
+
+/*//Getters & Setters
+class Rectangle {
+    constructor(name, width, height) {
+        this.name = name;
+        this.width = width;
+        this.height = height;
+    }
+
+    get area() {
+        return this.width * this.height;
+    }
+
+    set area(value) {
+        this.width = Math.sqrt(value);
+        this.height = Math.sqrt(value);
+    }
+}
+
+const square = new Rectangle('Square', 20, 20);
+console.log(square.area);
+square.area = 100;
+console.log(square.area);*/
+
+
