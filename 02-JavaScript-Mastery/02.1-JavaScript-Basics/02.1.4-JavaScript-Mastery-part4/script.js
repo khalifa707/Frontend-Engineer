@@ -307,3 +307,45 @@ function Person(firstName, lastName) {
     });
 }*/
 
+/*
+//Private Property Convention
+class Wallet{
+    constructor() {
+        this.balance = 0;
+        this._amount = 0;
+    }
+    deposit(amount) {
+        this._amount = amount;
+        this.balance += this._amount;
+    }
+    withdraw(amount) {
+        this._amount = amount;
+        this.balance -= this._amount;
+    }
+    get amount() {
+        return this._amount;
+    }
+}
+const wallet = new Wallet();
+wallet.deposit(100);
+console.log(wallet.balance);*/
+
+/*// ES2022 Private Fields
+class Wallet {
+    #balance = 0;
+    #amount = 0;
+    deposit(amount) {
+        this.#amount = amount;
+        this.#balance += this.#amount;
+    }
+    withdraw(amount) {
+        this.#amount = amount;
+        this.#balance -= this.#amount;
+    }
+    get balance() {
+        return this.#balance;
+    }
+}
+const wallet = new Wallet();
+wallet.deposit(100);
+console.log(wallet.balance);*/
