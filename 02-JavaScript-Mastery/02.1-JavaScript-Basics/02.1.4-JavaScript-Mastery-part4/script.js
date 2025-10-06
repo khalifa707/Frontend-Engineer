@@ -290,4 +290,20 @@ console.log(square.area);
 square.area = 100;
 console.log(square.area);*/
 
+/*// Setters & Getters with defineProperty()
+function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+
+    Object.defineProperty(this, 'fullName', {
+        get: function () {
+            return this.firstName + ' ' + this.lastName;
+        },
+        set: function (value) {
+            const parts = value.split(' ');
+            this.firstName = parts[0];
+            this.lastName = parts[1];
+        }
+    });
+}*/
 
