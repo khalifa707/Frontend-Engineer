@@ -349,3 +349,32 @@ class Wallet {
 const wallet = new Wallet();
 wallet.deposit(100);
 console.log(wallet.balance);*/
+
+/*//Property Flags & Descriptors
+let descriptor = Object.getOwnPropertyDescriptors(Math, 'PI');
+console.log(descriptor);
+
+const rectObj = [
+    name = 'Rectangle 1',
+    width = 10,
+    height = 10,
+]
+
+Object.defineProperty(rectObj, 'name', {
+    writable: false,
+    configurable: false,
+    enumerable: false
+});
+descriptor = Object.getOwnPropertyDescriptors(rectObj, 'PI');
+console.log(descriptor);*/
+
+/*
+//Sealing & Freezing Objects
+const rectObj = {
+    name: 'Rectangle 1',
+    width: 10,
+    height: 10,
+}
+Object.freeze(rectObj);
+rectObj.name = 'Rectangle 2';
+console.log(rectObj);*/
