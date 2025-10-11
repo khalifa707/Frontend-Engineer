@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0080ff;
+}
+
+.rating-container {
+    text-align: center;
+    padding: 40px 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    background-color: #fff;
+    width: 90%;
+    margin: auto;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.star{
+    transition: color 0.2s ease-in-out;
+    color: #ccc;
+}
+
+.start.active{
+    color: gold;
+}
+
+.feedback {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
