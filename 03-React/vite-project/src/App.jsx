@@ -1,5 +1,9 @@
+import Rating from './components/Rating.jsx';
+
 const App = () => {
-    return <div>Rate Your Experience</div>
-};
+    return<div>
+        <Rating />
+    </div>
+}
 
 export default App;
