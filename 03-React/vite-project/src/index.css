@@ -49,3 +49,64 @@ body{
     font-weight: bold;
     color: #333;
 }
+.submit-btn {
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #0080ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.submit-btn:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.close-btn {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 5px;
+}
+
+.close-btn:hover {
+    background-color: darkred;
+}

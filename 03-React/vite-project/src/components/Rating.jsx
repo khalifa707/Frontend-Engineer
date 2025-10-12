@@ -11,6 +11,13 @@ const Rating = (props) => {
         'Good',
         'Excellent'
     ];
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleSubmit = () => {
+        if (rating > 0){
+            setSubmitted(true);
+        }
+    };
     return (
         <div className="rating-container">
            <h2>{props.heading}</h2>
@@ -33,6 +40,19 @@ const Rating = (props) => {
                 ))}
             </div>
             {rating > 0 && <p className="feedback">{feedbackMessages[rating - 1]}</p>}
+            <button className='submit-btn'
+                    onClick={() => setSubmitted(true)}
+                    disabled={submitted || rating === 0}>Submit</button>
+
+            {submitted && (
+                <div className="modal-overlay">
+                    <div className="modal">
+                        <h2>Thank You!</h2>
+                        <p>Your rated us {rating} star{rating > 1 ? 's' : ''}</p>
+                        <button className="close-btn" onClick={() => setSubmitted(false)}>Close</button>
+                    </div>
+                </div>
+            )}
         </div>
     )
 };
