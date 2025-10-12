@@ -2,7 +2,7 @@ import Rating from './components/Rating.jsx';
 
 const App = () => {
     return<div>
-        <Rating />
+        <Rating heading="Rate Your Experience !!!!" />
     </div>
 }
 
