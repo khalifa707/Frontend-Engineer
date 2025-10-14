@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Star from "./Star.jsx";
+import Modal from "./Modal.jsx";
 
 const Rating = (props) => {
     const [rating, setRating] = useState(0);
@@ -42,17 +43,11 @@ const Rating = (props) => {
             {rating > 0 && <p className="feedback">{feedbackMessages[rating - 1]}</p>}
             <button className='submit-btn'
                     onClick={() => setSubmitted(true)}
-                    disabled={submitted || rating === 0}>Submit</button>
-
-            {submitted && (
-                <div className="modal-overlay">
-                    <div className="modal">
-                        <h2>Thank You!</h2>
-                        <p>Your rated us {rating} star{rating > 1 ? 's' : ''}</p>
-                        <button className="close-btn" onClick={() => setSubmitted(false)}>Close</button>
-                    </div>
-                </div>
-            )}
+                    disabled={submitted || rating === 0}>
+                Submit
+            </button>
+            <Modal isOpen={submitted} onClose={() => setSubmitted(false)}
+                   rating={rating}/>
         </div>
     )
 };

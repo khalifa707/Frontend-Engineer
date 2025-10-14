@@ -2,7 +2,7 @@
 const Star = ({star, rating, hover, setRating, setHover}) => {
     return (
         <span className='star'
-              style={{color: star <= (hover || rating) ? 'gold' : '#ccc'}}
+              style={{color: star <= (hover || rating) ? 'gold' : '#ccc', cursor: 'pointer'}}
               onClick={() => setRating(star)}
               onMouseEnter={() => setHover(star)}
               onMouseLeave={() => setHover(0)}
