@@ -13,9 +13,9 @@ const NoteList = ({notes}) => {
             {notes.map((note) => (
                 <div key={note.id} className="bg-white p-4 rounded-lg shadow-md">
                     <h3 className="text-xl font-bold mb-2">{note.title}</h3>
-                    <p className="text-gray-600 mb-4">{note.description}</p>
-                    <p className="text-sm text-gray-500">Priority: {note.priority}</p>
-                    <p className="text-sm text-gray-500">Category: {note.category}</p>
+                    <p className="text-sm text-gray-500"><strong className="text-gray-900">Priority:</strong> {note.priority}</p>
+                    <p className="text-sm text-gray-500"><strong className="text-gray-900">Category:</strong> {note.category}</p>
+                    <p className="text-gray-600 mb-4 mt-2">{note.description}</p>
                 </div>
             ))}
         </div>
