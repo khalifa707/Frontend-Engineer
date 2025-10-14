@@ -42,7 +42,7 @@ const NoteForm = ({notes, setNotes}) => {
     };
 
     return (
-        <form action="" className="mb-4" onSubmit={{handleSubmit}}>
+        <form action="" className="mb-4" onSubmit={handleSubmit}>
             <div className="mb-4">
                 <label htmlFor="" className="block font-bold mb-2">Title</label>
                 <input type="text" 
