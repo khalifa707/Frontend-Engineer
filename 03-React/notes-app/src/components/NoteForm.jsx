@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import TextInput from "./inputs/TextInput";
 import SelectInput from "./inputs/SelectInput";
+import TextArea from "./inputs/TextArea";
 
 const NoteForm = ({notes, setNotes}) => {
 /*    const [title, setTitle] = useState('');
@@ -47,9 +48,7 @@ const NoteForm = ({notes, setNotes}) => {
 
     return (
         <>
-            <button onClick={() => setIsFormVisible(!isFormVisible)}
-                    className="w-full bg-gray-200 text-gray-800 px-4 py-2 rounded-lg
-            cursor-pointer hover:bg-gray-300 mb-4">
+            <button onClick={() => setIsFormVisible(!isFormVisible)} className="w-full bg-gray-200 text-gray-800 px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-300 mb-4">
                 {isFormVisible ? 'Close Form' : 'Add Note +'}
             </button>
             {isFormVisible && (
@@ -83,18 +82,14 @@ const NoteForm = ({notes, setNotes}) => {
                             {value: 'Shopping', label: 'Shopping'}
                         ]}
                     />
-            <div className="mb-4">
-                <label htmlFor="" className="block font-bold mb-2">Description</label>
-                <textarea name="description"
-                       id="description"
-                       value={formData.description}
-                       onChange={handleChange}
-                          className="w-full p-2 border rounded-lg">
-
-                </textarea>
-            </div>
-            <button type="submit" className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg
-            cursor-pointer hover:bg-blue-600">
+                    <TextArea
+                        label="Description"
+                        name="description"
+                        value={formData.description}
+                        onChange={handleChange}
+                        required
+                    />
+            <button type="submit" className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-blue-600">
                 Add Note
             </button>
         </form>
