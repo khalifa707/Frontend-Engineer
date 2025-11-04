@@ -1,21 +1,42 @@
 import React from 'react';
-import {useRef} from "react";
+import {useRef, useState} from "react";
 
 const App = () => {
-    const inputRef = useRef(null);
-    const submit = () => {
-        alert(inputRef.current.value);
+    const timerRef = useRef(null);
+    const [time, setTime] = useState(0);
+    const [isRunning, setIsRunning] = useState(false);
+
+    const toggleTimer = () => {
+        if (isRunning) {
+            clearInterval(timerRef.current);
+            timerRef.current = null;
+        } else {
+            timerRef.current = setInterval(() => {
+                setTime((prevTime) => prevTime + 1);
+            }, 1000);
+        }
+        setIsRunning(!isRunning);
     };
 
+    const resetTimer = () => {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+        setTime(0);
+        setIsRunning(false);
+    };
     return (
-        <div className="max-w-md mx-auto mt-10 p-6 bg-gray-100 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold mb-4 text-center">useRef Example</h2>
-            <input type="text" placeholder="Type Something..."
-                   className="w-full p-2 border rounded-lg"
-                   ref={inputRef}/>
-            <button
-                onClick={submit}
-                className="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Submit</button>
+        <div className="max-w-md mx-auto mt-10 p-6 bg-gray-100 rounded-lg shadow-lg text-center">
+            <h2 className="text-2xl font-bold mb-4">Timer: {time}</h2>
+            <button onClick={toggleTimer}
+                    className="mt-3 bg-green-500 text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-green-600 mr-3">
+                {isRunning ? 'Pause' : 'Start'}
+            </button>
+
+            <button onClick={resetTimer}
+                    className="mt-3 bg-red-500 text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-red-600">
+                Reset
+            </button>
+
         </div>
     );
 };
