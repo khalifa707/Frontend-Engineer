@@ -5,14 +5,14 @@ const global = {
 // Highlight active link
 function highlightActiveLink() {
     const links = document.querySelectorAll('.nav-link');
-    const currentFile = global.currentPage.split('/').pop() || 'index.html';
+    const currentFile = global.currentPage.split('/').pop() || 'app.ts';
 
     links.forEach((link) => {
         link.classList.remove('active');
         const linkHref = link.getAttribute('href');
 
         if (linkHref === currentFile ||
-            (currentFile === 'index.html' && linkHref === 'index.html') ||
+            (currentFile === 'app.ts' && linkHref === 'app.ts') ||
             (global.currentPage.includes('shows.html') && linkHref === 'shows.html')) {
             link.classList.add('active');
         }
@@ -295,7 +295,7 @@ function init() {
 
     switch (global.currentPage) {
         case '/':
-        case '/index.html':
+        case '/app.ts':
             displayPopularMovies();
             break;
         case '/shows.html':
@@ -312,7 +312,7 @@ function init() {
             break;
         default:
             // Handle file:// protocol and other paths
-            if (global.currentPage.includes('index.html') || global.currentPage.endsWith('/')) {
+            if (global.currentPage.includes('app.ts') || global.currentPage.endsWith('/')) {
                 displayPopularMovies();
             } else if (global.currentPage.includes('shows.html')) {
                 displayPopularShows();
